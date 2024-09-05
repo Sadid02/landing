@@ -58,21 +58,21 @@
             border: 1px solid #d6e9c6;
             border-radius: 4px;
         }
-        .feature-list {
+        .feature-list, .image-list {
             margin-bottom: 15px;
         }
-        .feature-item {
+        .feature-item, .image-item {
             margin-bottom: 10px;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
             background: #f9f9f9;
         }
-        .feature-item input {
+        .feature-item input, .image-item input {
             display: block;
             margin-bottom: 5px;
         }
-        .feature-item button {
+        .feature-item button, .image-item button {
             margin-top: 5px;
         }
     </style>
@@ -157,7 +157,7 @@
         function updateFeaturesSection() {
             const featureItems = document.querySelectorAll('#featureList .feature-item');
             const features = Array.from(featureItems).map(item => {
-                const imageUrl = item.querySelector('input[type="text"]').value;
+                const imageUrl = item.querySelectorAll('input[type="text"]')[0].value;
                 const description = item.querySelectorAll('input[type="text"]')[1].value;
                 return { image: imageUrl, description: description };
             }).filter(feature => feature.image.trim() !== '' && feature.description.trim() !== '');
