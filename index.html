@@ -20,7 +20,7 @@
             margin: auto;
             overflow: hidden;
         }
-        /* Header Styles */
+                /* Header Styles */
         header {
             background: #111;
             color: #fff;
@@ -117,7 +117,6 @@
             height: auto;
             border-radius: 10px;
             animation: slide 15s infinite;
-            margin-right: 10px; /* Space between images */
         }
         @keyframes slide {
             0% { transform: translateX(0); }
@@ -139,16 +138,11 @@
             color: #f07f00;
             animation: fadeInUp 1s ease-out;
         }
-        .feature-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
         .feature-item {
             margin: 20px;
-            width: 100%;
-            max-width: 300px;
+            display: inline-block;
+            vertical-align: top;
+            width: 30%;
             transition: transform 0.3s ease;
         }
         .feature-item:hover {
@@ -254,9 +248,7 @@
     <section id="features">
         <div class="container">
             <h2>Features</h2>
-            <div class="feature-list" id="featureList">
-                <!-- Feature items will be inserted here dynamically -->
-            </div>
+            <!-- Features will be inserted here dynamically -->
         </div>
     </section>
 
@@ -276,11 +268,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-
-        menuToggle.addEventListener('click', ()
         // Mobile menu toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
@@ -305,15 +292,5 @@
             slider.innerHTML = sliderImages.map(url => `<img src="${url}" alt="Slider Image">`).join('');
 
             // Populate features section
-            const features = JSON.parse(localStorage.getItem('features')) || [];
-            const featureList = document.getElementById('featureList');
-            featureList.innerHTML = features.map(feature => `
-                <div class="feature-item">
-                    <img src="${feature.image}" alt="${feature.description}">
-                    <p>${feature.description}</p>
-                </div>
-            `).join('');
-        };
-    </script>
-</body>
-</html>
+
+        
